@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="page.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="page.js" defer></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init('iPh2AS2WXdsRN9ZQ3'); // Replace 'YOUR_USER_ID' with your actual user ID
+       })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="birthDate">Birth Date:</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="18" max="100">
+
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option value="dataScience">Data Science</option>
+                <option value="fullStackJava">Full Stack Java</option>
+                <option value="mernStack">MERN Stack</option>
+                <option value="frontend">Frontend Development</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <form id="otpForm" style="display: none;">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+</body>
+</html>
